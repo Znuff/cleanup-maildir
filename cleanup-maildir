@@ -213,9 +213,8 @@ class MaildirMessage(rfc822.Message):
                                 email.Header.decode_header(s)))
         except(LookupError):
             return s
-        except(ValueError):
-            return s
-        except(HeaderParseError):
+        except:
+          # bad practice, yolo
             return s
 
     def getSubjectHash(self):
