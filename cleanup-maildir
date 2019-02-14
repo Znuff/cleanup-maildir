@@ -215,6 +215,7 @@ class MaildirMessage(rfc822.Message):
             return s
         except:
           # bad practice, yolo
+            print("Unhandled Exception with current message, continuing...")
             return s
 
     def getSubjectHash(self):
